@@ -17,7 +17,6 @@ import com.samyotech.fabcustomer.ui.activity.BaseActivity;
 import com.samyotech.fabcustomer.utils.CustomTextView;
 import com.samyotech.fabcustomer.utils.CustomTextViewBold;
 
-
 public class Home extends Fragment implements View.OnClickListener{
     private View view;
     private BaseActivity baseActivity;

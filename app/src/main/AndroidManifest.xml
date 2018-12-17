@@ -142,13 +142,12 @@
             android:name=".ui.activity.WriteReview"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
-
         <activity
             android:name=".ui.activity.PaymetWeb"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.AddMoney"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <!-- [START firebase_service] -->
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
@@ -168,7 +167,7 @@
             android:name="io.fabric.ApiKey"
             android:value="6956ee260d8a46359094304995f81a6c154130cd" />
 
-
+        <activity android:name=".ui.activity.ArtistByCatgActivity"></activity>
     </application>
 
 </manifest>

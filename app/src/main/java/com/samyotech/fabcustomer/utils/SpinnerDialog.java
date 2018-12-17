@@ -31,6 +31,7 @@ public class SpinnerDialog {
     ListView listView;
     MyAdapterRadio myAdapterRadio;
     int pos;
+
     public SpinnerDialog(Activity activity, ArrayList<CategoryDTO> categoryDTOS, String dialogTitle) {
         this.categoryDTOS = categoryDTOS;
         this.context = activity;
@@ -44,6 +45,7 @@ public class SpinnerDialog {
 
 
     public void showSpinerDialog() {
+
         Builder adb = new Builder(this.context);
         View v = this.context.getLayoutInflater().inflate(R.layout.dialog_layout_radio, (ViewGroup) null);
         TextView close = (TextView) v.findViewById(R.id.close);
