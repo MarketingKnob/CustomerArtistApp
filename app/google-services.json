@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "146086678520",
+    "firebase_url": "https://fabcustomer-2f7ae.firebaseio.com",
+    "project_id": "fabcustomer-2f7ae",
+    "storage_bucket": "fabcustomer-2f7ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146086678520:android:ef03d2fb136bddf8",
+        "android_client_info": {
+          "package_name": "com.samyotech.fabcustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146086678520-st4bpslbgfvlmiavv7ft6kcvh9je4jb3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samyotech.fabcustomer",
+            "certificate_hash": "52e0eb35bb196526f63b3d56aab4afe33842faec"
+          }
+        },
+        {
+          "client_id": "146086678520-b2buqt3t141si551ba6j54vu2h3n97gl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx9Lu_f3lpM1bCellLmrgRs7oeN1QWFSY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146086678520-b2buqt3t141si551ba6j54vu2h3n97gl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "146086678520-mdc47vlq6ofsfk02g9ug49sfu0sbi17h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.FabCustomer",
+                "app_store_id": "1234"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
