@@ -147,7 +147,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.AddMoney"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"></activity>
+
         <!-- [START firebase_service] -->
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
@@ -168,6 +169,7 @@
             android:value="6956ee260d8a46359094304995f81a6c154130cd" />
 
         <activity android:name=".ui.activity.ArtistByCatgActivity"></activity>
+
     </application>
 
 </manifest>
