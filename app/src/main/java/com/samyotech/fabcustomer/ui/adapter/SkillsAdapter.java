@@ -38,7 +38,7 @@ public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        holder.tvSkills.setText(skillsDTOList.get(position).getSkill());
+        holder.tvSkills.setText(skillsDTOList.get(position).getSkill()+" ");
     }
 
     @Override

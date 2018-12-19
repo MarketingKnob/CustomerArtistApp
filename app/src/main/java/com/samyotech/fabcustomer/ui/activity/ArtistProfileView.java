@@ -1,26 +1,22 @@
 package com.samyotech.fabcustomer.ui.activity;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v7.widget.AppCompatImageView;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
-import android.widget.RelativeLayout;
-
 import com.ToxicBakery.viewpager.transforms.ZoomOutSlideTransformer;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -67,7 +63,8 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
     private String TAG = ArtistProfileView.class.getSimpleName();
     private Context mContext;
     private LinearLayout llBack;
-    private CustomButton cbRequest, cbChat;
+    private CustomButton cbRequest;
+    private AppCompatImageView cbChat;
     private CustomTextViewBold tvNameHedar, tvName, tvReviewsText;
     private CircleImageView ivArtist;
     private CustomTextView tvWork, tvLocation, tvArtistRate, tvRating, tvJobComplete, tvProfileComplete, tvAbout;
@@ -142,13 +139,12 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         viewEvents = (AutoScrollViewPager) findViewById(R.id.viewEvents);
         viewDots = (LinearLayout) findViewById(R.id.viewDots);
 
-
         ivFav = findViewById(R.id.ivFav);
         tvBookNow = findViewById(R.id.tvBookNow);
-        llBack = findViewById(R.id.llBack);
+//        llBack = findViewById(R.id.llBack);
         cbChat = findViewById(R.id.cbChat);
         cbRequest = findViewById(R.id.cbRequest);
-        tvNameHedar = findViewById(R.id.tvNameHedar);
+//        tvNameHedar = findViewById(R.id.tvNameHedar);
         tvName = findViewById(R.id.tvName);
         ivArtist = findViewById(R.id.ivArtist);
         tvWork = findViewById(R.id.tvWork);
@@ -170,7 +166,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         ic_left_pw = findViewById(R.id.ic_left_pw);
         ic_right_pw = findViewById(R.id.ic_right_pw);
 
-        llBack.setOnClickListener(this);
+//        llBack.setOnClickListener(this);
         cbChat.setOnClickListener(this);
         cbRequest.setOnClickListener(this);
         ic_left_pro.setOnClickListener(this);
@@ -184,7 +180,12 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         mLayoutManagerQuali = new LinearLayoutManager(getApplicationContext());
         mLayoutManagerReview = new LinearLayoutManager(getApplicationContext());
 
-        rvSkills.setLayoutManager(mLayoutManagerSkills);
+
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvSkills.setLayoutManager(layoutManager);
+        rvSkills.setItemAnimator(new DefaultItemAnimator());
+
         rvQualification.setLayoutManager(mLayoutManagerQuali);
         rvReviews.setLayoutManager(mLayoutManagerReview);
 
@@ -273,7 +274,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
     }
 
     public void showData() {
-        tvNameHedar.setText(artistDetailsDTO.getName());
+//        tvNameHedar.setText(artistDetailsDTO.getName());
         tvName.setText(artistDetailsDTO.getName());
         ratingbar.setRating(Float.parseFloat(artistDetailsDTO.getAva_rating()));
         tvWork.setText(artistDetailsDTO.getCategory_name());

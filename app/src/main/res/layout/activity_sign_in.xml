@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
-        android:src="@drawable/fab" />
+        android:src="@drawable/fab_without" />
 
 
     <LinearLayout

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">FabCustomer</string>
+    <string name="app_name" translatable="false">Customer</string>
     <string name="permission_pick_rationale">READ_EXTERNAL_STORAGE permission is needed to pick image.</string>
     <string name="permission_crop_rationale">WRITE_EXTERNAL_STORAGE permission is needed to save cropped image.</string>
     <string name="button_allow">Allow</string>
@@ -85,7 +85,7 @@
     <string name="opps_share">Opps!! It seems that you have not installed any sharing app.</string>
     <string name="invoice">Invoice</string>
     <string name="ic_wallet">Wallet</string>
-    <string name="fabartist">FabArtist</string>
+    <string name="fabartist">Artist</string>
     <string name="jobs">Post Jobs</string>
     <string name="notification">Notifications</string>
     <string name="profile_settings">Profile Settings</string>

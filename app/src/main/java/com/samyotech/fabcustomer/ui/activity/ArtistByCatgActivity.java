@@ -76,7 +76,6 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 
         parms.put(Consts.USER_ID, userDTO.getUser_id());
 
-
         Intent intent = getIntent();
         StrId       = intent.getStringExtra("CatId");
         strHeader   = intent.getStringExtra("CatName");
@@ -85,7 +84,6 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
         if (!StrId.equals("")){
             parms.put(Consts.CATEGORY_ID, StrId);
         }
-
 
         swipeRefreshLayout  =  findViewById(R.id.swipe_refresh_layout);
         tvNotFound          =  findViewById(R.id.tvNotFound);
@@ -142,7 +140,6 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
                         e.printStackTrace();
 
                     }
-
 
                 } else {
                     ProjectUtils.showToast(ArtistByCatgActivity.this, msg);
