@@ -55,9 +55,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import ir.apend.slider.model.Slide;
+import ir.apend.slider.ui.Slider;
 
 public class ArtistProfileView extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
     private String TAG = ArtistProfileView.class.getSimpleName();
@@ -107,7 +110,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
     public LinearLayout viewDots;
     public int dotsCount;
     private ImageView[] dots;
-
+    Slider slider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,7 +144,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
 
         ivFav = findViewById(R.id.ivFav);
         tvBookNow = findViewById(R.id.tvBookNow);
-//        llBack = findViewById(R.id.llBack);
+        llBack = findViewById(R.id.llBack);
         cbChat = findViewById(R.id.cbChat);
         cbRequest = findViewById(R.id.cbRequest);
 //        tvNameHedar = findViewById(R.id.tvNameHedar);
@@ -165,6 +168,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         ic_right_pro = findViewById(R.id.ic_right_pro);
         ic_left_pw = findViewById(R.id.ic_left_pw);
         ic_right_pw = findViewById(R.id.ic_right_pw);
+        slider = findViewById(R.id.slider);
 
 //        llBack.setOnClickListener(this);
         cbChat.setOnClickListener(this);
@@ -175,6 +179,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         ic_right_pw.setOnClickListener(this);
         tvBookNow.setOnClickListener(this);
         ivFav.setOnClickListener(this);
+
 
         mLayoutManagerSkills = new LinearLayoutManager(getApplicationContext());
         mLayoutManagerQuali = new LinearLayoutManager(getApplicationContext());
@@ -195,6 +200,15 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         } else {
             ProjectUtils.showToast(mContext, getResources().getString(R.string.internet_concation));
         }
+
+        List<Slide> slideList = new ArrayList<>();
+        slideList.add(new Slide(0,"http://cssslider.com/sliders/demo-20/data1/images/picjumbo.com_img_4635.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(1,"http://cssslider.com/sliders/demo-12/data1/images/picjumbo.com_hnck1995.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(2,"http://cssslider.com/sliders/demo-19/data1/images/picjumbo.com_hnck1588.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(3,"http://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slider.addSlides(slideList);
+
+
     }
 
 
@@ -218,7 +232,6 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
                 } else {
                     ProjectUtils.showToast(mContext, getResources().getString(R.string.internet_concation));
                 }
-
 
                 break;
             case R.id.cbChat:
@@ -280,33 +293,33 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         tvWork.setText(artistDetailsDTO.getCategory_name());
         tvLocation.setText(artistDetailsDTO.getLocation());
 
-        if (artistDetailsDTO.getArtist_commission_type().equalsIgnoreCase("0")){
+//        if (artistDetailsDTO.getArtist_commission_type().equalsIgnoreCase("0")){
+//
+//            if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("0")){
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+getResources().getString(R.string.hr_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
+//
+//            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("2")){
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+getResources().getString(R.string.hr_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
+//            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("1")){
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+getResources().getString(R.string.hr_add_on)+" " + artistDetailsDTO.getCategory_price()+"%");
+//            }else {
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice() + getResources().getString(R.string.hr_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
+//            }
+//
+//        }else {
+//            if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("0")){
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
+//            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("2")){
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
+//            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("1")){
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" " + artistDetailsDTO.getCategory_price()+"%");
+//            }else {
+//                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
+//            }
+//
+//        }
 
-            if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("0")){
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+getResources().getString(R.string.hr_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
-            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("2")){
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+getResources().getString(R.string.hr_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
-            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("1")){
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+getResources().getString(R.string.hr_add_on)+" " + artistDetailsDTO.getCategory_price()+"%");
-            }else {
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice() + getResources().getString(R.string.hr_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
-            }
-
-        }else {
-            if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("0")){
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
-            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("2")){
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
-            }else if (artistDetailsDTO.getCommission_type().equalsIgnoreCase("1") && artistDetailsDTO.getFlat_type().equalsIgnoreCase("1")){
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" " + artistDetailsDTO.getCategory_price()+"%");
-            }else {
-                tvArtistRate.setText(artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getPrice()+" " + getResources().getString(R.string.fixed_rate_add_on)+" "+artistDetailsDTO.getCurrency_type() + artistDetailsDTO.getCategory_price());
-            }
-
-
-        }
-
-
+        tvArtistRate.setText("Response rate: 1 hrs");
 
         tvRating.setText("(" + artistDetailsDTO.getAva_rating() + "/5)");
         tvJobComplete.setText(artistDetailsDTO.getJobDone() + " "+getResources().getString(R.string.jobs_completed));

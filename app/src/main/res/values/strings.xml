@@ -17,7 +17,7 @@
     <string name="closeMsg">Are your sure you want to close FabArtist?</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
-    <string name="jobs_completed">Jobs Completed</string>
+    <string name="jobs_completed">Jobs Done</string>
     <string name="completion">% Completion</string>
     <string name="hr_add_on">/hr Add On :</string>
     <string name="fixed_rate_add_on">fixed rate Add On :</string>

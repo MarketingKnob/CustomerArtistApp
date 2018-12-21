@@ -44,7 +44,6 @@ public class SplashActivity extends AppCompatActivity {
         mContext = SplashActivity.this;
         prefference = SharedPrefrence.getInstance(SplashActivity.this);
 
-
     }
 
     Runnable mTask = new Runnable() {

@@ -443,7 +443,8 @@ public class PostJob extends AppCompatActivity implements View.OnClickListener {
         } else {
             return true;
         }
-    }  public boolean validatePrice() {
+    }
+    public boolean validatePrice() {
         if (!ProjectUtils.isEditTextFilled(etPrice)) {
             etPrice.setError(getResources().getString(R.string.val_price));
             etPrice.requestFocus();
