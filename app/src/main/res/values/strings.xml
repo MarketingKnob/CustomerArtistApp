@@ -18,7 +18,7 @@
     <string name="yes">YES</string>
     <string name="no">NO</string>
     <string name="jobs_completed">Jobs Done</string>
-    <string name="completion">% Completion</string>
+    <string name="completion">Completion</string>
     <string name="hr_add_on">/hr Add On :</string>
     <string name="fixed_rate_add_on">fixed rate Add On :</string>
     <string name="reviews">REVIEW(</string>

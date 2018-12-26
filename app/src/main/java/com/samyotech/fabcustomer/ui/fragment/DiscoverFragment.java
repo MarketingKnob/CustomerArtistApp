@@ -35,6 +35,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import ir.apend.slider.model.Slide;
+import ir.apend.slider.ui.Slider;
+
 
 public class DiscoverFragment extends Fragment implements View.OnClickListener
 //        , SwipeRefreshLayout.OnRefreshListener
@@ -54,7 +57,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener
     private ArrayList<CategoryDTO> categoryDTOS;
     private HashMap<String, String> parmsCategory = new HashMap<>();
     private SpinnerDialog spinnerDialogCate;
-
+    Slider slider;
     RvArtistCatAdapter rvArtistCatAdapter;
 
     @Nullable
@@ -84,6 +87,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener
 //        rvDiscover.setLayoutManager(mLayoutManager);
 
         rvCategory  = view.findViewById(R.id.rv_category);
+        slider = view.findViewById(R.id.slider);
 //        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 //        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 //        rvCategory.setLayoutManager(layoutManager);
@@ -97,7 +101,12 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener
 
 
 
-
+        List<Slide> slideList = new ArrayList<>();
+        slideList.add(new Slide(0,"http://cssslider.com/sliders/demo-20/data1/images/picjumbo.com_img_4635.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
+        slideList.add(new Slide(1,"http://cssslider.com/sliders/demo-12/data1/images/picjumbo.com_hnck1995.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
+        slideList.add(new Slide(2,"http://cssslider.com/sliders/demo-19/data1/images/picjumbo.com_hnck1588.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
+        slideList.add(new Slide(3,"http://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
+        slider.addSlides(slideList);
 
     }
 

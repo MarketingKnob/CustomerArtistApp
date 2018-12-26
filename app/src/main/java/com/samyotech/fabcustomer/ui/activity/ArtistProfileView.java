@@ -170,7 +170,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         ic_right_pw = findViewById(R.id.ic_right_pw);
         slider = findViewById(R.id.slider);
 
-//        llBack.setOnClickListener(this);
+        llBack.setOnClickListener(this);
         cbChat.setOnClickListener(this);
         cbRequest.setOnClickListener(this);
         ic_left_pro.setOnClickListener(this);
@@ -202,10 +202,14 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         }
 
         List<Slide> slideList = new ArrayList<>();
-        slideList.add(new Slide(0,"http://cssslider.com/sliders/demo-20/data1/images/picjumbo.com_img_4635.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
-        slideList.add(new Slide(1,"http://cssslider.com/sliders/demo-12/data1/images/picjumbo.com_hnck1995.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
-        slideList.add(new Slide(2,"http://cssslider.com/sliders/demo-19/data1/images/picjumbo.com_hnck1588.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
-        slideList.add(new Slide(3,"http://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg" , getResources().getDimensionPixelSize(R.dimen.slider_image_corner)));
+        slideList.add(new Slide(0,"http://cssslider.com/sliders/demo-20/data1/images/picjumbo.com_img_4635.jpg" ,
+                getResources().getDimensionPixelSize(R.dimen.zero_margin)));
+        slideList.add(new Slide(1,"http://cssslider.com/sliders/demo-12/data1/images/picjumbo.com_hnck1995.jpg" ,
+                getResources().getDimensionPixelSize(R.dimen.zero_margin)));
+        slideList.add(new Slide(2,"http://cssslider.com/sliders/demo-19/data1/images/picjumbo.com_hnck1588.jpg" ,
+                getResources().getDimensionPixelSize(R.dimen.zero_margin)));
+        slideList.add(new Slide(3,"http://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg" ,
+                getResources().getDimensionPixelSize(R.dimen.zero_margin)));
         slider.addSlides(slideList);
 
 
@@ -322,9 +326,9 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         tvArtistRate.setText("Response rate: 1 hrs");
 
         tvRating.setText("(" + artistDetailsDTO.getAva_rating() + "/5)");
-        tvJobComplete.setText(artistDetailsDTO.getJobDone() + " "+getResources().getString(R.string.jobs_completed));
+        tvJobComplete.setText(getResources().getString(R.string.jobs_completed)+":"+artistDetailsDTO.getJobDone());
         tvProfileComplete.setText(artistDetailsDTO.getName());
-        tvProfileComplete.setText(artistDetailsDTO.getCompletePercentages() +""+getResources().getString(R.string.completion));
+        tvProfileComplete.setText(getResources().getString(R.string.completion)+":"+artistDetailsDTO.getCompletePercentages()+"%");
 
         tvAbout.setText(artistDetailsDTO.getAbout_us());
 
