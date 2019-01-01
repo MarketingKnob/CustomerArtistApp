@@ -41,11 +41,10 @@
 
     </RelativeLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.2"
+        android:layout_weight="2"
         android:gravity="center">
 
         <ir.apend.slider.ui.Slider
@@ -66,689 +65,743 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.8">
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--card_view:cardBackgroundColor="@color/white"-->
+        <!--card_view:cardCornerRadius="5dp"-->
+        <!--card_view:cardElevation="4dp">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.samyotech.fabcustomer.utils.CustomTextView
+                android:id="@+id/tvWork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:singleLine="true"
+                android:text="Work"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ivFav"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_fav_blank" />
+
+
+        </RelativeLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="5">
 
-            <ScrollView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1.5"
+                android:baselineAligned="false"
+                android:gravity="center|start"
+                android:weightSum="3">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_response_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/profile_round_box"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:elevation="10dp"
+                        card_view:cardCornerRadius="3dp"
+                        card_view:cardElevation="10dp"
+                        card_view:cardMaxElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:id="@+id/cbChat"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:background="@drawable/chat" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="2dp"
+                                android:text="1 hrs"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/ll_response_rate"
+                    android:layout_weight="1"
+                    android:background="@drawable/profile_round_box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:elevation="10dp"
+                        card_view:cardCornerRadius="3dp"
+                        card_view:cardElevation="10dp"
+                        card_view:cardMaxElevation="10dp">
+
+                        <com.samyotech.fabcustomer.utils.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:text="Skills"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp" />
+
+                        <com.samyotech.fabcustomer.utils.CustomTextView
+                            android:id="@+id/tvArtistRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_margin="5dp"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_skill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="true">
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:singleLine="true"
+                    android:text="@string/skills"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </LinearLayout>
+
+            <!--<com.samyotech.fabcustomer.utils.CustomTextViewBold-->
+            <!--android:id="@+id/tvName"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="Name"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="16sp"-->
+            <!--android:visibility="gone"/>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="2"
+                android:weightSum="3">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/ivArtist"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_placeholder" />
+
+                    <com.samyotech.fabcustomer.utils.CustomTextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="gfdgsgsgsgfsdgfssgsgs"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight=".8"
+                    android:background="@drawable/profile_round_box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:elevation="10dp"
+                        card_view:cardCornerRadius="3dp"
+                        card_view:cardElevation="10dp"
+                        card_view:cardMaxElevation="10dp">
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:text="Rating"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                            <RatingBar
+                                android:id="@+id/ratingbar"
+                                style="@style/RatingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:rating="4.5"
+                                android:scaleX=".7"
+                                android:scaleY=".7"
+                                android:theme="@style/RatingBar" />
+
+                            <com.samyotech.fabcustomer.utils.CustomTextView
+                                android:id="@+id/tvRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivArtist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/dummyuser_image" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight=".8"
+                    android:background="@drawable/profile_round_box"
+                    android:gravity="center">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:elevation="10dp"
+                        card_view:cardCornerRadius="3dp"
+                        card_view:cardElevation="10dp"
+                        card_view:cardMaxElevation="10dp">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/location" />
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1.5"
+                android:gravity="center|end">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toLeftOf="@+id/tvBookNow"
+                    android:background="@drawable/profile_round_box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:elevation="10dp"
+                        card_view:cardCornerRadius="3dp"
+                        card_view:cardElevation="10dp"
+                        card_view:cardMaxElevation="10dp">
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                        <com.samyotech.fabcustomer.utils.CustomTextView
+                            android:id="@+id/tvJobComplete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:singleLine="true"
+                            android:text="" />
+
+
+                        <com.samyotech.fabcustomer.utils.CustomTextView
+                            android:id="@+id/tvProfileComplete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textSize="14sp" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+                <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                    android:id="@+id/tvBookNow"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_selector3"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/book_now"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <com.samyotech.fabcustomer.utils.CustomButton
+                    android:id="@+id/cbRequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/button_selector3"
+                    android:padding="5dp"
+                    android:text="@string/future_book"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+            <!--</android.support.v7.widget.CardView>-->
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="3dp"
+                android:visibility="gone"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:orientation="vertical">
 
-                    <!--<android.support.v7.widget.CardView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_margin="10dp"-->
-                    <!--card_view:cardBackgroundColor="@color/white"-->
-                    <!--card_view:cardCornerRadius="5dp"-->
-                    <!--card_view:cardElevation="4dp">-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                    <LinearLayout
+                        <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/image_gallery"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlBanner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:visibility="visible">
+
+                        <com.samyotech.fabcustomer.utils.AutoScrollViewPager
+                            android:id="@+id/viewEvents"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fitsSystemWindows="true"
+                            tools:listitem="@layout/pager_gallary" />
+
+                        <LinearLayout
+                            android:id="@+id/viewDots"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="visible" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/white" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:text="@string/about"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.samyotech.fabcustomer.utils.CustomTextView
+                        android:id="@+id/tvAbout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:text="@string/qualification"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rvQualification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:text="@string/products"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:visibility="gone">
-
-                            <com.samyotech.fabcustomer.utils.CustomTextView
-                                android:id="@+id/tvWork"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="8dp"
-                                android:singleLine="true"
-                                android:text="Work"
-                                android:textSize="16sp" />
-
-                            <ImageView
-                                android:id="@+id/ivFav"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_alignParentRight="true"
-                                android:layout_margin="8dp"
-                                android:src="@drawable/ic_fav_blank" />
-
-
-                        </RelativeLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:weightSum="3">
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:id="@+id/ll_response_rate"
-                                android:layout_width="0dp"
-                                android:layout_height="80dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/button_pressed_line"
-                                android:orientation="vertical">
-
-                                <android.support.v7.widget.AppCompatImageView
-                                    android:id="@+id/cbChat"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="55dp"
-                                    android:layout_marginStart="5dp"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_marginEnd="5dp"
-                                    android:background="@drawable/chat" />
-
-                                <android.support.v7.widget.AppCompatTextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:text="1 hrs"
-                                    android:textColor="@color/colorPrimaryDark"
-                                    android:textSize="14sp"/>
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="10dp"
-                                android:layout_toRightOf="@+id/ll_response_rate"
-                                android:layout_weight="1"
-                                android:background="@drawable/button_pressed_line"
-                                android:orientation="vertical"
-                                android:padding="5dp">
-
-                                <com.samyotech.fabcustomer.utils.CustomTextView
-                                    android:id="@+id/tvArtistRate"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_margin="5dp"
-                                    android:text=""
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_skill"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:visibility="gone">
-
-                            <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="8dp"
-                                android:singleLine="true"
-                                android:text="@string/skills"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-                            <android.support.v7.widget.RecyclerView
-                                android:id="@+id/rvSkills"
+                            <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:id="@+id/vpProducts"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp">
-
-                            </android.support.v7.widget.RecyclerView>
-
-
+                                android:layout_height="165dp" />
                         </LinearLayout>
 
-
-                        <!--<com.samyotech.fabcustomer.utils.CustomTextViewBold-->
-                        <!--android:id="@+id/tvName"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_gravity="center"-->
-                        <!--android:layout_margin="5dp"-->
-                        <!--android:singleLine="true"-->
-                        <!--android:text="Name"-->
-                        <!--android:textColor="@color/black"-->
-                        <!--android:textSize="16sp"-->
-                        <!--android:visibility="gone"/>-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
+                        <ImageView
+                            android:id="@+id/ic_left_pro"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:weightSum="3">
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_left_arrow" />
 
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="10dp"
-                                android:layout_toRightOf="@id/ivArtist"
-                                android:gravity="center"
-                                android:visibility="gone">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_placeholder" />
-
-                                <com.samyotech.fabcustomer.utils.CustomTextView
-                                    android:id="@+id/tvLocation"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:text="gfdgsgsgsgfsdgfssgsgs"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="120dp"
-                                android:layout_alignParentTop="true"
-                                android:layout_centerVertical="true"
-                                android:layout_weight=".8"
-                                android:background="@drawable/button_pressed_line"
-                                android:orientation="vertical"
-                                android:gravity="center">
-
-                                <android.support.v7.widget.AppCompatTextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="10dp"
-                                    android:gravity="center"
-                                    android:text="Rating"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-
-                                <RatingBar
-                                    android:id="@+id/ratingbar"
-                                    style="@style/RatingBar"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:rating="4.5"
-                                    android:scaleX=".7"
-                                    android:scaleY=".7"
-                                    android:theme="@style/RatingBar" />
-
-                                <com.samyotech.fabcustomer.utils.CustomTextView
-                                    android:id="@+id/tvRating"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:singleLine="true"
-                                    android:text=""
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1.4">
-
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:id="@+id/ivArtist"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="120dp"
-                                    android:src="@drawable/dummyuser_image"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="120dp"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_weight=".8"
-                                android:background="@drawable/button_pressed_line"
-                                android:gravity="center">
-
-                                <android.support.v7.widget.AppCompatImageView
-                                    android:id="@+id/iv_location"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="3dp"
-                                    android:src="@drawable/location" />
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="70dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginTop="3dp"
-                                android:layout_toLeftOf="@+id/tvBookNow"
-                                android:background="@drawable/button_pressed_line"
-                                android:orientation="vertical"
-                                android:gravity="center">
-
-                                <com.samyotech.fabcustomer.utils.CustomTextView
-                                    android:id="@+id/tvJobComplete"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:singleLine="true"
-                                    android:text=""
-                                    android:paddingStart="5dp"
-                                    android:paddingEnd="5dp"/>
-
-
-                                <com.samyotech.fabcustomer.utils.CustomTextView
-                                    android:id="@+id/tvProfileComplete"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:paddingStart="5dp"
-                                    android:paddingEnd="5dp"
-                                    android:singleLine="true"
-                                    android:text=""
-                                    android:textSize="14sp" />
-
-
-                            </LinearLayout>
-
-                            <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                android:id="@+id/tvBookNow"
-                                android:layout_width="100dp"
-                                android:layout_height="70dp"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="3dp"
-                                android:layout_marginBottom="10dp"
-                                android:background="@drawable/button_selector3"
-                                android:gravity="center"
-                                android:paddingStart="10dp"
-                                android:paddingEnd="10dp"
-                                android:text="@string/book_now"
-                                android:textColor="@color/white"
-                                android:textSize="14sp" />
-
-                            <com.samyotech.fabcustomer.utils.CustomButton
-                                android:id="@+id/cbRequest"
-                                android:layout_width="wrap_content"
-                                android:layout_height="35dp"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:layout_marginStart="20dp"
-                                android:background="@drawable/button_selector3"
-                                android:padding="5dp"
-                                android:text="@string/future_book"
-                                android:textColor="@color/white"
-                                android:textSize="14sp"
-                                android:visibility="gone" />
-
-
-                        </RelativeLayout>
-                    </LinearLayout>
-                    <!--</android.support.v7.widget.CardView>-->
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="3dp"
-                        android:visibility="gone"
-                        card_view:cardBackgroundColor="@color/white"
-                        card_view:cardCornerRadius="5dp"
-                        card_view:cardElevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
+                        <ImageView
+                            android:id="@+id/ic_right_pro"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical">
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_right_arrow" />
 
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                    </RelativeLayout>
 
-                                <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:singleLine="true"
-                                    android:text="@string/image_gallery"
-                                    android:textColor="@color/black"
-                                    android:textSize="16sp" />
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:id="@+id/rlBanner"
-                                android:layout_width="fill_parent"
-                                android:layout_height="200dp"
-                                android:visibility="visible">
-
-                                <com.samyotech.fabcustomer.utils.AutoScrollViewPager
-                                    android:id="@+id/viewEvents"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:fitsSystemWindows="true"
-                                    tools:listitem="@layout/pager_gallary" />
-
-
-                                <LinearLayout
-                                    android:id="@+id/viewDots"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginBottom="10dp"
-                                    android:gravity="center"
-                                    android:orientation="horizontal"
-                                    android:visibility="visible" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1.5dp"
-                                    android:layout_alignParentBottom="true"
-                                    android:background="@color/white" />
-
-
-                            </RelativeLayout>
-
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:visibility="gone"
-                        card_view:cardBackgroundColor="@color/white"
-                        card_view:cardCornerRadius="5dp"
-                        card_view:cardElevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical">
-
-                            <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:singleLine="true"
-                                android:text="@string/about"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-                            <com.samyotech.fabcustomer.utils.CustomTextView
-                                android:id="@+id/tvAbout"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:singleLine="true"
-                                android:text=""
-                                android:textSize="14sp" />
-
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:visibility="gone"
-                        card_view:cardBackgroundColor="@color/white"
-                        card_view:cardCornerRadius="5dp"
-                        card_view:cardElevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical">
-
-                            <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:singleLine="true"
-                                android:text="@string/qualification"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-                            <android.support.v7.widget.RecyclerView
-                                android:id="@+id/rvQualification"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:visibility="gone"
-                        card_view:cardBackgroundColor="@color/white"
-                        card_view:cardCornerRadius="5dp"
-                        card_view:cardElevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical">
-
-                            <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:singleLine="true"
-                                android:text="@string/products"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_marginLeft="40dp"
-                                    android:layout_marginRight="40dp"
-                                    android:orientation="vertical">
-
-                                    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-                                        android:id="@+id/vpProducts"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="165dp" />
-                                </LinearLayout>
-
-                                <ImageView
-                                    android:id="@+id/ic_left_pro"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_centerInParent="true"
-                                    android:padding="10dp"
-                                    android:src="@drawable/ic_left_arrow" />
-
-                                <ImageView
-                                    android:id="@+id/ic_right_pro"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerInParent="true"
-                                    android:padding="10dp"
-                                    android:src="@drawable/ic_right_arrow" />
-
-                            </RelativeLayout>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:visibility="gone"
-                        card_view:cardBackgroundColor="@color/white"
-                        card_view:cardCornerRadius="5dp"
-                        card_view:cardElevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical">
-
-                            <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:singleLine="true"
-                                android:text="@string/privious_work"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_marginLeft="40dp"
-                                    android:layout_marginRight="40dp"
-                                    android:orientation="vertical">
-
-                                    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-                                        android:id="@+id/vpPreviousWork"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="80dp" />
-
-                                </LinearLayout>
-
-
-                                <ImageView
-                                    android:id="@+id/ic_left_pw"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_centerInParent="true"
-                                    android:padding="10dp"
-                                    android:src="@drawable/ic_left_arrow" />
-
-                                <ImageView
-                                    android:id="@+id/ic_right_pw"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerInParent="true"
-                                    android:padding="10dp"
-                                    android:src="@drawable/ic_right_arrow" />
-
-
-                            </RelativeLayout>
-
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:visibility="gone"
-                        card_view:cardBackgroundColor="@color/white"
-                        card_view:cardCornerRadius="5dp"
-                        card_view:cardElevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical">
-
-                            <com.samyotech.fabcustomer.utils.CustomTextViewBold
-                                android:id="@+id/tvReviewsText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:singleLine="true"
-                                android:text=""
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-                            <android.support.v7.widget.RecyclerView
-                                android:id="@+id/rvReviews"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
                 </LinearLayout>
-            </ScrollView>
 
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:text="@string/privious_work"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:orientation="vertical">
+
+                            <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:id="@+id/vpPreviousWork"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp" />
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:id="@+id/ic_left_pw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_left_arrow" />
+
+                        <ImageView
+                            android:id="@+id/ic_right_pw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_right_arrow" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.samyotech.fabcustomer.utils.CustomTextViewBold
+                        android:id="@+id/tvReviewsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rvReviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".5"
-        android:background="#99000000"
-        android:gravity="center"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Company Space"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
     </LinearLayout>
 </LinearLayout>
