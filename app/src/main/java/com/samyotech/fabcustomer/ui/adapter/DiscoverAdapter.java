@@ -91,7 +91,6 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.MyView
             e.printStackTrace();
         }
 
-
         holder.CTVjobdone.setText(allAtristListDTOList.get(position).getJobDone());
         holder.tvRating.setText("(" + allAtristListDTOList.get(position).getAva_rating() + "/5)");
         holder.CTVpersuccess.setText(allAtristListDTOList.get(position).getPercentages() + "%");
