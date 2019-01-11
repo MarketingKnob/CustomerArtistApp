@@ -25,6 +25,7 @@ import com.samyotech.fabcustomer.interfacess.Consts;
 import com.samyotech.fabcustomer.interfacess.Helper;
 import com.samyotech.fabcustomer.network.NetworkManager;
 import com.samyotech.fabcustomer.preferences.SharedPrefrence;
+import com.samyotech.fabcustomer.ui.ZoomOutTransformation;
 import com.samyotech.fabcustomer.ui.adapter.CustomViewPagerAdapter;
 import com.samyotech.fabcustomer.ui.adapter.DiscoverAdapter;
 import com.samyotech.fabcustomer.ui.adapter.RvArtistCatAdapter;
@@ -182,12 +183,15 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 //        rvDiscover.setVisibility(View.VISIBLE);
 //        discoverAdapter = new DiscoverAdapter(this, allAtristListDTOList, myInflater);
 //        rvDiscover.setAdapter(discoverAdapter);
+
+        ZoomOutTransformation zoomOutTransformation = new ZoomOutTransformation();
         tvNotFound.setVisibility(View.GONE);
         mViewPager.setVisibility(View.VISIBLE);
         ivNext.setVisibility(View.VISIBLE);
         ivPrev.setVisibility(View.VISIBLE);
         custompageradpter = new CustomViewPagerAdapter(this,allAtristListDTOList);
         mViewPager.setAdapter(custompageradpter);
+        mViewPager.setPageTransformer(true, zoomOutTransformation);
     }
 
 

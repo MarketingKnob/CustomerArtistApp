@@ -3,30 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="5">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <android.support.v7.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:background="@color/colorPrimary"
-            android:text="Space for Ads"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
-
-    </LinearLayout>
+    android:background="@drawable/seven">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_height="wrap_content">
 
         <com.samyotech.fabcustomer.utils.CustomTextView
             android:id="@+id/CTVartistwork"
@@ -36,7 +17,8 @@
             android:layout_centerHorizontal="true"
             android:singleLine="true"
             android:text="- Category -"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/IVartist"
@@ -56,8 +38,8 @@
             android:layout_marginTop="15dp"
             android:singleLine="true"
             android:text="demo"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -86,8 +68,8 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:text=""
-                android:textColor="@color/colorPrimary"
-                android:textSize="13sp" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
@@ -100,33 +82,24 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_pressed_line"
+            android:gravity="center"
             android:text="Rs. 100"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"
-            android:gravity="center"/>
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center|top">
+            android:textSize="16sp" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_set_profile"
             android:layout_width="180dp"
             android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/blue_corner"
             android:text="Setup Profile"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:layout_below="@+id/btn_price"/>
 
-    </LinearLayout>
 
+    </RelativeLayout>
 
 </LinearLayout>

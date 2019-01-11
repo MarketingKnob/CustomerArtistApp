@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -44,29 +43,40 @@
         android:background="@color/white"
         android:weightSum="1">
 
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_pace"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/light"
+            android:text="Space for Ads"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
         <android.support.v4.view.ViewPager
             android:id="@+id/images_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btn_pace" />
 
         <ImageView
             android:id="@+id/img_next"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:paddingBottom="5dp"
             android:src="@drawable/next"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/img_previous"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:src="@drawable/prev"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <com.samyotech.fabcustomer.utils.CustomTextViewBold
             android:id="@+id/tvNotFound"

@@ -7,7 +7,12 @@ package com.samyotech.fabcustomer.interfacess;
 public interface Consts {
     public static String APP_NAME = "FabCustomer";
 
-    public String BASE_URL = "http://phpstack-132936-677440.cloudwaysapps.com/Webservice/";
+//    OLD Server
+//    public String BASE_URL = "http://phpstack-132936-677440.cloudwaysapps.com/Webservice/";
+
+//    New MKnob
+    public String BASE_URL = "http://planetory.agency/artist/Webservice/";
+
     public String PAYMENT_FAIL = "http://phpstack-132936-677440.cloudwaysapps.com/Stripe/Payment/fail";
     public String PAYMENT_SUCCESS = "http://phpstack-132936-677440.cloudwaysapps.com/Stripe/Payment/success";
     public String MAKE_PAYMENT = "http://phpstack-132936-677440.cloudwaysapps.com/Stripe/Payment/make_payment/";
@@ -192,7 +197,6 @@ public interface Consts {
     // Replace this key with your's
     public static final String DEVELOPER_KEY = "AIzaSyBlLIsCaCw8ylCTPR0XhaKp-vkeD4S-5_0";
 
-
     /*Payment*/
     String PAYMENT_TYPE = "payment_type";
     /*Chat*/
@@ -201,7 +205,6 @@ public interface Consts {
     /*Paypal Client Id*/
     /*Add Review*/
     String RATING = "rating";
-
 
     /*Add Money*/
     String TXN_ID = "txn_id";
