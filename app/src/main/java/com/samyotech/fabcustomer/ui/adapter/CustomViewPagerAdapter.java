@@ -71,7 +71,8 @@ public class CustomViewPagerAdapter extends PagerAdapter {
 
         tvRating.setText("(" + allAtristListDTOList.get(position).getAva_rating() + "/5)");
         CTVartistname.setText(allAtristListDTOList.get(position).getName());
-        ratingbar.setRating(Float.parseFloat(allAtristListDTOList.get(position).getAva_rating()));
+//        ratingbar.setRating(Float.parseFloat(allAtristListDTOList.get(position).getAva_rating()));
+        ratingbar.setRating((float) 3.0);
         btn_price.setText("Rs. "+allAtristListDTOList.get(position).getPrice());
         btn_set_profile.setOnClickListener(new View.OnClickListener() {
             @Override

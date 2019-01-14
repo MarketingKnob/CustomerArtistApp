@@ -163,7 +163,6 @@
                                 style="@style/RatingBar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/Profilename"
                                 android:layout_centerHorizontal="true"
                                 android:isIndicator="true"
                                 android:numStars="5"

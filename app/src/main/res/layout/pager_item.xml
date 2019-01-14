@@ -52,6 +52,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
+
             <RatingBar
                 android:id="@+id/ratingbar"
                 style="@style/Widget.AppCompat.RatingBar.Small"
@@ -59,8 +60,9 @@
                 android:layout_height="wrap_content"
                 android:isIndicator="true"
                 android:numStars="5"
-                android:rating="5"
-                android:theme="@style/RatingBar" />
+                android:rating="3"
+                android:progressBackgroundTint="@color/gray"
+                android:progressTint="@color/white"/>
 
             <com.samyotech.fabcustomer.utils.CustomTextView
                 android:id="@+id/tvRating"
@@ -98,7 +100,6 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:layout_below="@+id/btn_price"/>
-
 
     </RelativeLayout>
 

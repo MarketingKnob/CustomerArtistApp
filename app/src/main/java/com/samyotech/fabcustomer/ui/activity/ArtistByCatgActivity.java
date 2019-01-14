@@ -12,6 +12,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -126,21 +129,28 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 //            }
 //        });
 
+       final Animation animBounce = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.click_event);
+
         ivPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mViewPager.setCurrentItem(getItemofviewpager(-1), true);
+                ivPrev.startAnimation(animBounce);
 
             }
         });
+
 
         ivNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mViewPager.setCurrentItem(getItemofviewpager(+1), true);
+                ivNext.startAnimation(animBounce);
 
             }
         });
+
     }
 
     public void getArtist() {
