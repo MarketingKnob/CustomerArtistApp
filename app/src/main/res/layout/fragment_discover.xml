@@ -82,6 +82,7 @@
                 android:layout_height="match_parent" />
 
             <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_calender"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentEnd="true"

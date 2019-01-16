@@ -50,6 +50,7 @@ import com.samyotech.fabcustomer.utils.ProjectUtils;
 
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -65,7 +66,7 @@ import ir.apend.slider.ui.Slider;
 public class ArtistProfileView extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
     private String TAG = ArtistProfileView.class.getSimpleName();
     private Context mContext;
-    private LinearLayout llBack;
+    private LinearLayout llBack,llSkills;
     private CustomButton cbRequest;
     private AppCompatImageView cbChat;
     private CustomTextViewBold tvNameHedar, tvName, tvReviewsText;
@@ -142,9 +143,11 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         viewEvents = (AutoScrollViewPager) findViewById(R.id.viewEvents);
         viewDots = (LinearLayout) findViewById(R.id.viewDots);
 
+
         ivFav = findViewById(R.id.ivFav);
         tvBookNow = findViewById(R.id.tvBookNow);
         llBack = findViewById(R.id.llBack);
+        llSkills =  findViewById(R.id.ll_skills);
         cbChat = findViewById(R.id.cbChat);
         cbRequest = findViewById(R.id.cbRequest);
 //        tvNameHedar = findViewById(R.id.tvNameHedar);
@@ -179,6 +182,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         ic_right_pw.setOnClickListener(this);
         tvBookNow.setOnClickListener(this);
         ivFav.setOnClickListener(this);
+        llSkills.setOnClickListener(this);
 
 
         mLayoutManagerSkills = new LinearLayoutManager(getApplicationContext());
@@ -264,6 +268,15 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
             case R.id.ic_right_pw:
                 int nextPw = getItemPlusPW(1);
                 vpPreviousWork.setCurrentItem(nextPw);
+                break;
+            case R.id.ll_skills:
+
+                Intent intent= new Intent(this,SkillsReviewActivity.class);
+                Bundle args = new Bundle();
+                args.putSerializable("SkillsArray",(Serializable)skillsDTOList);
+                args.putSerializable("ReviewArray",(Serializable)reviewsDTOList);
+                intent.putExtra("BUNDLE",args);
+                startActivity(intent);
                 break;
 
         }

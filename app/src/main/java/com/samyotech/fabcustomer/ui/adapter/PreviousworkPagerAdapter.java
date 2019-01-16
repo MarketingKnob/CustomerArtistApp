@@ -62,7 +62,7 @@ public class PreviousworkPagerAdapter extends PagerAdapter {
         RatingBar ratingbar = itemView.findViewById(R.id.ratingbar);
         CustomTextView CTVprice = itemView.findViewById(R.id.CTVprice);
 
-        //IVpreviouswork.setImageResource(artistBookingDTOList.get(position).getUserImage());
+        //IVpreviouswork.setImageResource(artistBookingDTOList.get(position).getUser_image());
         Glide.with(context).
                 load(artistBookingDTOList.get(position).getUserImage())
                 .placeholder(R.drawable.dummyuser_image)

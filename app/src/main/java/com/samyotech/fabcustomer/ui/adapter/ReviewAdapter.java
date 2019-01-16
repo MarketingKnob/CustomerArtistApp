@@ -58,7 +58,6 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.MyViewHold
             e.printStackTrace();
         }
 
-
         holder.ratingbar.setRating(Float.parseFloat(reviewsDTOList.get(position).getRating()));
         Glide.with(mContext).
                 load(reviewsDTOList.get(position).getImage())

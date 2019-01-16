@@ -73,6 +73,8 @@ public interface Consts {
     public String ADD_MONEY_API = "addMoney";
     public String GET_WALLET_HISTORY_API = "getWalletHistory";
     public String GET_WALLET_API = "getWallet";
+    public String GET_All_JOBS_API = "get_all_jobs";
+
 
 
     /*app data*/

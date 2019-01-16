@@ -59,15 +59,15 @@
                 android:resource="@xml/filepaths" />
         </provider>
 
-        <!--<meta-data-->
-            <!--android:name="com.google.android.geo.API_KEY"-->
-            <!--android:value="AIzaSyBlLIsCaCw8ylCTPR0XhaKp-vkeD4S-5_0" />-->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.geo.API_KEY" -->
+        <!-- android:value="AIzaSyBlLIsCaCw8ylCTPR0XhaKp-vkeD4S-5_0" /> -->
 
-        <!--New One-->
+
+        <!-- New One -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAhGX-tcW4rlMcK9iUJlQvIOi_MMFxuTeU" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@mipmap/ic_launcher" />
@@ -153,7 +153,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.AddMoney"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <!-- [START firebase_service] -->
         <service android:name=".MyFirebaseMessagingService">
@@ -174,8 +174,9 @@
             android:name="io.fabric.ApiKey"
             android:value="6956ee260d8a46359094304995f81a6c154130cd" />
 
-        <activity android:name=".ui.activity.ArtistByCatgActivity"></activity>
-
+        <activity android:name=".ui.activity.ArtistByCatgActivity" />
+        <activity android:name=".ui.activity.SkillsReviewActivity" />
+        <activity android:name=".ui.activity.CalenderViewActivity"></activity>
     </application>
 
 </manifest>

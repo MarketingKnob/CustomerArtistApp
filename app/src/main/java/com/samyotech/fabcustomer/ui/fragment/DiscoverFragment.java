@@ -1,9 +1,11 @@
 package com.samyotech.fabcustomer.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,6 +24,7 @@ import com.samyotech.fabcustomer.https.HttpsRequest;
 import com.samyotech.fabcustomer.interfacess.Consts;
 import com.samyotech.fabcustomer.interfacess.Helper;
 import com.samyotech.fabcustomer.preferences.SharedPrefrence;
+import com.samyotech.fabcustomer.ui.activity.CalenderViewActivity;
 import com.samyotech.fabcustomer.ui.adapter.DiscoverAdapter;
 import com.samyotech.fabcustomer.ui.adapter.RvArtistCatAdapter;
 import com.samyotech.fabcustomer.utils.CustomTextViewBold;
@@ -59,6 +62,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener
     private SpinnerDialog spinnerDialogCate;
     Slider slider;
     RvArtistCatAdapter rvArtistCatAdapter;
+    AppCompatImageView ivCalender;
 
     @Nullable
     @Override
@@ -86,8 +90,9 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener
 //        mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
 //        rvDiscover.setLayoutManager(mLayoutManager);
 
-        rvCategory  = view.findViewById(R.id.rv_category);
-        slider = view.findViewById(R.id.slider);
+        rvCategory      = view.findViewById(R.id.rv_category);
+        slider          = view.findViewById(R.id.slider);
+        ivCalender      = view.findViewById(R.id.iv_calender);
 //        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 //        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 //        rvCategory.setLayoutManager(layoutManager);
@@ -99,14 +104,14 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener
 //        rvArtistCatAdapter = new RvArtistCatAdapter();
 //        rvCategory.setAdapter(rvArtistCatAdapter);
 
-
-
         List<Slide> slideList = new ArrayList<>();
         slideList.add(new Slide(0,"http://cssslider.com/sliders/demo-20/data1/images/picjumbo.com_img_4635.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
         slideList.add(new Slide(1,"http://cssslider.com/sliders/demo-12/data1/images/picjumbo.com_hnck1995.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
         slideList.add(new Slide(2,"http://cssslider.com/sliders/demo-19/data1/images/picjumbo.com_hnck1588.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
         slideList.add(new Slide(3,"http://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg" , getResources().getDimensionPixelSize(R.dimen.zero_margin)));
         slider.addSlides(slideList);
+
+        ivCalender.setOnClickListener(this);
 
     }
 
@@ -135,9 +140,9 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.tvFilter:
-//                spinnerDialogCate.showSpinerDialog();
-//            break;
+            case R.id.iv_calender:
+                startActivity(new Intent(getContext(),CalenderViewActivity.class));
+            break;
 
         }
     }

@@ -65,6 +65,7 @@ dependencies {
     //implementation 'com.google.firebase:firebase-ads:11.8.0'
     implementation 'com.google.android.gms:play-services-ads:11.8.0'
     implementation 'com.github.ApendIr:slider:1.0'
+    implementation 'com.github.prolificinteractive:material-calendarview:1.6.0'
 
     implementation('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
         transitive = true;

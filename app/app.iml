@@ -156,6 +156,7 @@
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-instantapps-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-auth-base-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-appindexing-license-11.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-v4-27.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-common-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-analytics-impl-license-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-license-11.8.0" level="project" />
@@ -166,10 +167,12 @@
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-core-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel-1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-iid-license-11.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-27.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tagmanager-v4-impl-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-iid-license-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.8.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:documentfile-28.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.prolificinteractive:material-calendarview-1.6.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-safetynet-license-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-vision-common-license-11.8.0" level="project" />
@@ -247,7 +250,6 @@
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-analytics-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:palette-v7-25.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-28.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-25.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-drive-license-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-storage-common-license-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:collections:28.0.0@jar" level="project" />
@@ -261,7 +263,6 @@
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:print-28.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-v4-25.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-nearby-11.8.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-11.8.0" level="project" />
