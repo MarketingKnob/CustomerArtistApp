@@ -87,4 +87,12 @@
         <item name="android:textColorLink">@color/black</item>
     </style>
 
+    <!--Calender Style-->
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+
+
 </resources>

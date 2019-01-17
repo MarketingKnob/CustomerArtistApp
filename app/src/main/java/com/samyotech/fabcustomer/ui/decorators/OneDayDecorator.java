@@ -1,45 +1,39 @@
 package com.samyotech.fabcustomer.ui.decorators;
 
-import android.graphics.Typeface;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StyleSpan;
-
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-import java.util.Date;
-
+import com.samyotech.fabcustomer.R;
 
 /**
  * Decorate a day by making the text big and bold
  */
 public class OneDayDecorator implements DayViewDecorator {
 
-  private CalendarDay date;
+    private final Drawable drawable;
+    private CalendarDay day;
 
-  public OneDayDecorator() {
-    date = CalendarDay.today();
-  }
+    public OneDayDecorator(Context context, CalendarDay day) {
+        this.day = day;
+        drawable = context.getResources().getDrawable(R.drawable.rectangle_red);
+    }
 
-  @Override
-  public boolean shouldDecorate(CalendarDay day) {
-    return date != null && day.equals(date);
-  }
+    public OneDayDecorator(Context context) {
+        drawable = context.getResources().getDrawable(R.drawable.rectangle_red);
+    }
 
-  @Override
-  public void decorate(DayViewFacade view) {
-    view.addSpan(new StyleSpan(Typeface.BOLD));
-    view.addSpan(new RelativeSizeSpan(1.4f));
-  }
+    @Override
+    public boolean shouldDecorate(CalendarDay day) {
+        if (this.day.equals(day)) {
+            return true;
+        }
+        return false;
+    }
 
-  /**
-   * We're changing the internals, so make sure to call {@linkplain MaterialCalendarView#invalidateDecorators()}
-   * @param date
-   */
-
-  public void setDate(Date date) {
-    this.date = CalendarDay.from(date);
-  }
-
+    @Override
+    public void decorate(DayViewFacade view) {
+        view.setSelectionDrawable(drawable);
+    }
 }

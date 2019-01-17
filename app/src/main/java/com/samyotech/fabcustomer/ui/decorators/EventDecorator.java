@@ -13,21 +13,21 @@ import java.util.HashSet;
  */
 public class EventDecorator implements DayViewDecorator {
 
-  private int color;
-  private HashSet<CalendarDay> dates;
+    private int color;
+    private HashSet<CalendarDay> dates;
 
-  public EventDecorator(int color, Collection<CalendarDay> dates) {
-    this.color = color;
-    this.dates = new HashSet<>(dates);
-  }
+    public EventDecorator(int color, Collection<CalendarDay> dates) {
+        this.color = color;
+        this.dates = new HashSet<>(dates);
+    }
 
-  @Override
-  public boolean shouldDecorate(CalendarDay day) {
-    return dates.contains(day);
-  }
+    @Override
+    public boolean shouldDecorate(CalendarDay day) {
+        return dates.contains(day);
+    }
 
-  @Override
-  public void decorate(DayViewFacade view) {
-    view.addSpan(new DotSpan(5, color));
-  }
+    @Override
+    public void decorate(DayViewFacade view) {
+        view.addSpan(new DotSpan(5, color));
+    }
 }
