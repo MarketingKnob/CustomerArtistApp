@@ -15,6 +15,7 @@ import com.google.gson.reflect.TypeToken;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 import com.samyotech.fabcustomer.DTO.AllJobsDTO;
 import com.samyotech.fabcustomer.R;
 import com.samyotech.fabcustomer.https.HttpsRequest;
@@ -39,7 +40,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-public class CalenderViewActivity extends AppCompatActivity implements OnDateSelectedListener {
+public class CalenderViewActivity extends AppCompatActivity implements OnDateSelectedListener,OnMonthChangedListener {
 
     MaterialCalendarView widget;
     private static final String TAG = "CalenderViewActivity";
@@ -74,6 +75,7 @@ public class CalenderViewActivity extends AppCompatActivity implements OnDateSel
                 new MySelectorDecorator(this, CalendarDay.from(currentDAte))
         );
         widget.setSelectedDate(currentDAte);
+        widget.setOnMonthChangedListener(this);
 
         getjobs();
 
@@ -185,4 +187,13 @@ public class CalenderViewActivity extends AppCompatActivity implements OnDateSel
     }
 
 
+    @Override
+    public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay calendarDay) {
+        Log.d(TAG, "onMonthChanged: ");
+
+        arrayListMatchDate = new ArrayList<HashMap<String, String>>();
+        rvDateNewAdapter = new RvDateNewAdapter(this, arrayListMatchDate);
+        recyclerViewDate.setAdapter(rvDateNewAdapter);
+
+    }
 }

@@ -35,4 +35,5 @@ public class MySelectorDecorator implements DayViewDecorator {
     public void decorate(DayViewFacade view) {
         view.setSelectionDrawable(drawable);
     }
+
 }

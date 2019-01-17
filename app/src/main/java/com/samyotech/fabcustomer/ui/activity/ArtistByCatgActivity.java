@@ -141,7 +141,6 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
             }
         });
 
-
         ivNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
