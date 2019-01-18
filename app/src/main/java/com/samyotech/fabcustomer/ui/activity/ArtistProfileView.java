@@ -68,7 +68,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
     private Context mContext;
     private LinearLayout llBack,llSkills;
     private CustomButton cbRequest;
-    private AppCompatImageView cbChat;
+    private AppCompatImageView cbChat,ivLocation;
     private CustomTextViewBold tvNameHedar, tvName, tvReviewsText;
     private CircleImageView ivArtist;
     private CustomTextView tvWork, tvLocation, tvArtistRate, tvRating, tvJobComplete, tvProfileComplete, tvAbout;
@@ -145,6 +145,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
 
 
         ivFav = findViewById(R.id.ivFav);
+        ivLocation = findViewById(R.id.iv_location);
         tvBookNow = findViewById(R.id.tvBookNow);
         llBack = findViewById(R.id.llBack);
         llSkills =  findViewById(R.id.ll_skills);
@@ -183,6 +184,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         tvBookNow.setOnClickListener(this);
         ivFav.setOnClickListener(this);
         llSkills.setOnClickListener(this);
+        ivLocation.setOnClickListener(this);
 
 
         mLayoutManagerSkills = new LinearLayoutManager(getApplicationContext());
@@ -277,6 +279,9 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
                 args.putSerializable("ReviewArray",(Serializable)reviewsDTOList);
                 intent.putExtra("BUNDLE",args);
                 startActivity(intent);
+                break;
+            case R.id.iv_location:
+                startActivity(new Intent(this,MapRouteActivity.class));
                 break;
 
         }

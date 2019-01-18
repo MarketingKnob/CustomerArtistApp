@@ -45,7 +45,6 @@ public class SkillsReviewActivity extends AppCompatActivity {
 
         init();
 
-
     }
 
     void init(){

@@ -1,4 +1,7 @@
 <resources>
+    
+    
+    <string name="google_maps_key">AIzaSyDrqh3_-AC700uiQzjdYMvN-oDlY-dONAg</string>
     <string name="app_name" translatable="false">Customer</string>
     <string name="permission_pick_rationale">READ_EXTERNAL_STORAGE permission is needed to pick image.</string>
     <string name="permission_crop_rationale">WRITE_EXTERNAL_STORAGE permission is needed to save cropped image.</string>
@@ -221,4 +224,5 @@
     <string name="pay_by_wallet">PAY BY WALLET</string>
     <string name="wallet_payment">Wallet Payment</string>
     <string name="wallet_msg">Are you sure want to do wallet payment?</string>
+    
 </resources>

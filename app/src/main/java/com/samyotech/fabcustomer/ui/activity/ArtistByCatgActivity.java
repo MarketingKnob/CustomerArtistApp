@@ -149,7 +149,6 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 
             }
         });
-
     }
 
     public void getArtist() {
