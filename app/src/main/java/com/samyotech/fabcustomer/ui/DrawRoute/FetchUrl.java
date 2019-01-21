@@ -21,5 +21,6 @@ public class FetchUrl {
         String parameters = str_origin + "&" + str_dest + "&" + sensor;
         String output = "json";
         return "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters+ "&key=" + context.getResources().getString(R.string.google_maps_key);
+
     }
 }

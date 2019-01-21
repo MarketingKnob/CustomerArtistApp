@@ -19,6 +19,8 @@ public class ArtistDetailsDTO implements Serializable {
     String bio = "";
     String longitude = "";
     String latitude = "";
+    String live_lat = "";
+    String live_long = "";
     String location = "";
     String video_url = "";
     String price = "";
@@ -155,6 +157,22 @@ public class ArtistDetailsDTO implements Serializable {
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
+    }
+
+    public String getLive_lat() {
+        return live_lat;
+    }
+
+    public void setLive_lat(String live_lat) {
+        this.live_lat = live_lat;
+    }
+
+    public String getLive_long() {
+        return live_long;
+    }
+
+    public void setLive_long(String live_long) {
+        this.live_long = live_long;
     }
 
     public String getLocation() {

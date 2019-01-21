@@ -113,6 +113,8 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
     private ImageView[] dots;
     Slider slider;
 
+    double srcLat=0.0,srcLng=0.0,destLat=0.0,destLng=0.0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -185,7 +187,6 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         ivFav.setOnClickListener(this);
         llSkills.setOnClickListener(this);
         ivLocation.setOnClickListener(this);
-
 
         mLayoutManagerSkills = new LinearLayoutManager(getApplicationContext());
         mLayoutManagerQuali = new LinearLayoutManager(getApplicationContext());
@@ -281,7 +282,14 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
                 startActivity(intent);
                 break;
             case R.id.iv_location:
-                startActivity(new Intent(this,MapRouteActivity.class));
+
+                Intent intent1=(new Intent(this,MapRouteActivity.class));
+                intent1.putExtra("SrcLat",srcLat);
+                intent1.putExtra("SrcLng",srcLng);
+                intent1.putExtra("DesLat",destLat);
+                intent1.putExtra("DesLng",destLng);
+                startActivity(intent1);
+
                 break;
 
         }
@@ -310,6 +318,13 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
 
     public void showData() {
 //        tvNameHedar.setText(artistDetailsDTO.getName());
+
+        srcLat=Double.parseDouble(artistDetailsDTO.getLive_lat().trim());
+        srcLng=Double.parseDouble(artistDetailsDTO.getLive_long().trim());
+
+        destLat=Double.parseDouble(artistDetailsDTO.getLatitude().trim());
+        destLng=Double.parseDouble(artistDetailsDTO.getLongitude().trim());
+
         tvName.setText(artistDetailsDTO.getName());
         ratingbar.setRating(Float.parseFloat(artistDetailsDTO.getAva_rating()));
         tvWork.setText(artistDetailsDTO.getCategory_name());
@@ -409,6 +424,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         viewEvents.setStopScrollWhenTouch(true);
         setPageViewIndicator(galleryPagerAdapter, viewEvents, viewDots);
     }
+
     private void setPageViewIndicator(final GalleryPagerAdapter galleryPagerAdapter, final AutoScrollViewPager viewEvents, final LinearLayout viewDots) {
         viewDots.removeAllViews();
         try {
