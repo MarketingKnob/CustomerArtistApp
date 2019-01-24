@@ -29,11 +29,11 @@
         </LinearLayout>
 
         <com.samyotech.fabcustomer.utils.CustomTextViewBold
+            android:id="@+id/header_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:singleLine="true"
-            android:text="Skills &amp; Review "
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -41,6 +41,7 @@
 
 
     <android.support.v7.widget.CardView
+        android:id="@+id/card_skills"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -75,6 +76,7 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/card_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

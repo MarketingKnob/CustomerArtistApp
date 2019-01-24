@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -66,7 +67,7 @@ import ir.apend.slider.ui.Slider;
 public class ArtistProfileView extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
     private String TAG = ArtistProfileView.class.getSimpleName();
     private Context mContext;
-    private LinearLayout llBack,llSkills;
+    private LinearLayout llBack,llSkills,ll_review;
     private CustomButton cbRequest;
     private AppCompatImageView cbChat,ivLocation;
     private CustomTextViewBold tvNameHedar, tvName, tvReviewsText;
@@ -144,6 +145,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
     public void setUiAction() {
         viewEvents = (AutoScrollViewPager) findViewById(R.id.viewEvents);
         viewDots = (LinearLayout) findViewById(R.id.viewDots);
+        ll_review =  findViewById(R.id.ll_review);
 
 
         ivFav = findViewById(R.id.ivFav);
@@ -187,6 +189,7 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
         ivFav.setOnClickListener(this);
         llSkills.setOnClickListener(this);
         ivLocation.setOnClickListener(this);
+        ll_review.setOnClickListener(this);
 
         mLayoutManagerSkills = new LinearLayoutManager(getApplicationContext());
         mLayoutManagerQuali = new LinearLayoutManager(getApplicationContext());
@@ -277,19 +280,24 @@ public class ArtistProfileView extends AppCompatActivity implements View.OnClick
                 Intent intent= new Intent(this,SkillsReviewActivity.class);
                 Bundle args = new Bundle();
                 args.putSerializable("SkillsArray",(Serializable)skillsDTOList);
-                args.putSerializable("ReviewArray",(Serializable)reviewsDTOList);
                 intent.putExtra("BUNDLE",args);
                 startActivity(intent);
                 break;
             case R.id.iv_location:
 
-                Intent intent1=(new Intent(this,MapRouteActivity.class));
-                intent1.putExtra("SrcLat",srcLat);
-                intent1.putExtra("SrcLng",srcLng);
-                intent1.putExtra("DesLat",destLat);
-                intent1.putExtra("DesLng",destLng);
-                startActivity(intent1);
-
+//                Intent intent1=(new Intent(this,MapRouteActivity.class));
+//                intent1.putExtra("SrcLat",srcLat);
+//                intent1.putExtra("SrcLng",srcLng);
+//                intent1.putExtra("DesLat",destLat);
+//                intent1.putExtra("DesLng",destLng);
+//                startActivity(intent1);
+                break;
+                case R.id.ll_review:
+                    Intent intent1= new Intent(this,SkillsReviewActivity.class);
+                    Bundle args1 = new Bundle();
+                    args1.putSerializable("ReviewArray",(Serializable)reviewsDTOList);
+                    intent1.putExtra("BUNDLE",args1);
+                    startActivity(intent1);
                 break;
 
         }

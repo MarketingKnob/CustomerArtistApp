@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class CustomViewPagerAdapter extends PagerAdapter {
     Context mContext;
     LayoutInflater mLayoutInflater;
     private ArrayList<AllAtristListDTO> allAtristListDTOList;
+    private static final String TAG = "CustomViewPagerAdapter";
 
     public CustomViewPagerAdapter(Context context,ArrayList<AllAtristListDTO> IallAtristListDTOList) {
         mContext            = context;
@@ -54,13 +56,27 @@ public class CustomViewPagerAdapter extends PagerAdapter {
         View view = mLayoutInflater.inflate(R.layout.pager_item, container, false);
 
         AppCompatTextView btn_price         = view.findViewById(R.id.btn_price);
+        AppCompatTextView prev_name         = view.findViewById(R.id.prev_name);
+        AppCompatTextView next_name         = view.findViewById(R.id.next_name);
         AppCompatButton btn_set_profile     = view.findViewById(R.id.btn_set_profile);
         CircleImageView IVartist            = view.findViewById(R.id.IVartist);
+        CircleImageView IVprev              = view.findViewById(R.id.IVprev);
+        CircleImageView IVNext              = view.findViewById(R.id.IVNext);
         CustomTextView tvRating             = view.findViewById(R.id.tvRating);
         RatingBar ratingbar                 = view.findViewById(R.id.ratingbar);
         CustomTextViewBold CTVartistname    = view.findViewById(R.id.CTVartistname);
         CustomTextView CTVartistwork        = view.findViewById(R.id.CTVartistwork);
 
+        int prevPos=0;
+        int nextPos=allAtristListDTOList.size()-1;
+        if (position != 0) {
+             prevPos=position-1;
+        }
+        if (nextPos>allAtristListDTOList.size()){
+            nextPos=position+1;
+        }
+
+        Log.d(TAG, "instantiateItem: "+allAtristListDTOList.size()+" Prev: "+prevPos+" Next :"+nextPos);
         CTVartistwork.setText("- "+allAtristListDTOList.get(position).getCategory_name()+"- ");
         Glide.with(mContext).
                 load(allAtristListDTOList.get(position).getImage())
@@ -68,6 +84,22 @@ public class CustomViewPagerAdapter extends PagerAdapter {
                 .dontAnimate()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(IVartist);
+
+            Glide.with(mContext).
+                    load(allAtristListDTOList.get(prevPos).getImage())
+                    .placeholder(R.drawable.dummyuser_image)
+                    .dontAnimate()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(IVprev);
+        prev_name.setText(allAtristListDTOList.get(prevPos).getName());
+        next_name.setText(allAtristListDTOList.get(nextPos).getName());
+
+            Glide.with(mContext).
+                    load(allAtristListDTOList.get(nextPos).getImage())
+                    .placeholder(R.drawable.dummyuser_image)
+                    .dontAnimate()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(IVNext);
 
         tvRating.setText("(" + allAtristListDTOList.get(position).getAva_rating() + "/5)");
         CTVartistname.setText(allAtristListDTOList.get(position).getName());

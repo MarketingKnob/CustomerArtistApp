@@ -1,5 +1,6 @@
 package com.samyotech.fabcustomer.ui.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
@@ -32,6 +33,7 @@ import com.samyotech.fabcustomer.ui.ZoomOutTransformation;
 import com.samyotech.fabcustomer.ui.adapter.CustomViewPagerAdapter;
 import com.samyotech.fabcustomer.ui.adapter.DiscoverAdapter;
 import com.samyotech.fabcustomer.ui.adapter.RvArtistCatAdapter;
+import com.samyotech.fabcustomer.utils.CommonUtil;
 import com.samyotech.fabcustomer.utils.CustomTextViewBold;
 import com.samyotech.fabcustomer.utils.ProjectUtils;
 
@@ -61,6 +63,7 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
     ViewPager mViewPager;
     CustomViewPagerAdapter custompageradpter;
     ImageView ivNext,ivPrev;
+    private ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +108,8 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 //        mLayoutManager      =  new LinearLayoutManager(this.getApplicationContext());
 //        rvDiscover.setLayoutManager(mLayoutManager);
 
+        pd          = CommonUtil.getProgressDialogMsg(this, "Loading Profile Please Wait......");
+        pd.show();
         getArtist();
 
 //        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -132,23 +137,23 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
        final Animation animBounce = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.click_event);
 
-        ivPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mViewPager.setCurrentItem(getItemofviewpager(-1), true);
-                ivPrev.startAnimation(animBounce);
+//        ivPrev.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mViewPager.setCurrentItem(getItemofviewpager(-1), true);
+//                ivPrev.startAnimation(animBounce);
+//
+//            }
+//        });
 
-            }
-        });
-
-        ivNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mViewPager.setCurrentItem(getItemofviewpager(+1), true);
-                ivNext.startAnimation(animBounce);
-
-            }
-        });
+//        ivNext.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mViewPager.setCurrentItem(getItemofviewpager(+1), true);
+//                ivNext.startAnimation(animBounce);
+//
+//            }
+//        });
     }
 
     public void getArtist() {
@@ -158,6 +163,7 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
         new HttpsRequest(Consts.GET_ALL_ARTISTS_API, parms, this).stringPost(TAG, new Helper() {
             @Override
             public void backResponse(boolean flag, String msg, JSONObject response) {
+                dismissDialog();
 //                swipeRefreshLayout.setRefreshing(false);
                 //ProjectUtils.pauseProgressDialog();
                 if (flag) {
@@ -175,6 +181,7 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 
                 } else {
                     ProjectUtils.showToast(ArtistByCatgActivity.this, msg);
+                    tvNotFound.setText("No Artist Found.");
                     tvNotFound.setVisibility(View.VISIBLE);
                     mViewPager.setVisibility(View.GONE);
                     ivNext.setVisibility(View.GONE);
@@ -195,12 +202,25 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
         ZoomOutTransformation zoomOutTransformation = new ZoomOutTransformation();
         tvNotFound.setVisibility(View.GONE);
         mViewPager.setVisibility(View.VISIBLE);
-        ivNext.setVisibility(View.VISIBLE);
-        ivPrev.setVisibility(View.VISIBLE);
+//        ivNext.setVisibility(View.VISIBLE);
+//        ivPrev.setVisibility(View.VISIBLE);
         custompageradpter = new CustomViewPagerAdapter(this,allAtristListDTOList);
         mViewPager.setAdapter(custompageradpter);
         mViewPager.setPageTransformer(true, zoomOutTransformation);
+
     }
+
+    private void dismissDialog() {
+        try {
+            if (pd != null) {
+                if (pd.isShowing())
+                    pd.dismiss();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
     private int getItemofviewpager(int i) {

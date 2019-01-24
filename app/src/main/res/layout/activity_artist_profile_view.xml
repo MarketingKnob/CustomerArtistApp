@@ -121,20 +121,20 @@
                 <LinearLayout
                     android:id="@+id/ll_response_rate"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="90dp"
                     android:layout_weight="1"
-                    android:background="@drawable/profile_round_box"
                     android:orientation="vertical">
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:elevation="10dp"
+                        android:layout_margin="10dp"
+                        android:elevation="15dp"
                         card_view:cardCornerRadius="3dp"
-                        card_view:cardElevation="10dp"
-                        card_view:cardMaxElevation="10dp">
+                        card_view:cardElevation="15dp"
+                        card_view:cardMaxElevation="15dp">
+
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -166,22 +166,21 @@
                 <LinearLayout
                     android:id="@+id/ll_skills"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="90dp"
                     android:layout_marginStart="10dp"
                     android:layout_toRightOf="@+id/ll_response_rate"
                     android:layout_weight="1"
-                    android:background="@drawable/profile_round_box"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:elevation="10dp"
+                        android:layout_margin="10dp"
+                        android:elevation="15dp"
                         card_view:cardCornerRadius="3dp"
-                        card_view:cardElevation="10dp"
-                        card_view:cardMaxElevation="10dp">
+                        card_view:cardElevation="15dp"
+                        card_view:cardMaxElevation="15dp">
 
                         <com.samyotech.fabcustomer.utils.CustomTextView
                             android:layout_width="wrap_content"
@@ -283,30 +282,29 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ll_review"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentTop="true"
                     android:layout_centerVertical="true"
                     android:layout_weight=".8"
-                    android:background="@drawable/profile_round_box"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:elevation="10dp"
+                        android:layout_margin="10dp"
+                        android:elevation="15dp"
                         card_view:cardCornerRadius="3dp"
-                        card_view:cardElevation="10dp"
-                        card_view:cardMaxElevation="10dp">
+                        card_view:cardElevation="15dp"
+                        card_view:cardMaxElevation="15dp">
 
                         <android.support.v7.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:orientation="vertical">
-
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:layout_width="match_parent"
@@ -369,17 +367,16 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_weight=".8"
-                    android:background="@drawable/profile_round_box"
                     android:gravity="center">
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:elevation="10dp"
+                        android:layout_margin="10dp"
+                        android:elevation="15dp"
                         card_view:cardCornerRadius="3dp"
-                        card_view:cardElevation="10dp"
-                        card_view:cardMaxElevation="10dp">
+                        card_view:cardElevation="15dp"
+                        card_view:cardMaxElevation="15dp">
 
                         <android.support.v7.widget.AppCompatImageView
                             android:id="@+id/iv_location"
@@ -408,18 +405,17 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toLeftOf="@+id/tvBookNow"
-                    android:background="@drawable/profile_round_box"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:elevation="10dp"
+                        android:layout_margin="10dp"
+                        android:elevation="15dp"
                         card_view:cardCornerRadius="3dp"
-                        card_view:cardElevation="10dp"
-                        card_view:cardMaxElevation="10dp">
+                        card_view:cardElevation="15dp"
+                        card_view:cardMaxElevation="15dp">
 
                         <android.support.v7.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -454,10 +450,10 @@
                 <com.samyotech.fabcustomer.utils.CustomTextViewBold
                     android:id="@+id/tvBookNow"
                     android:layout_width="100dp"
-                    android:layout_height="70dp"
+                    android:layout_height="60dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/button_selector3"
                     android:gravity="center"

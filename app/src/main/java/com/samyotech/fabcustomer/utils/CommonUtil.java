@@ -1,6 +1,7 @@
 package com.samyotech.fabcustomer.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -10,6 +11,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import com.samyotech.fabcustomer.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -28,6 +31,15 @@ public final class CommonUtil {
     /**
      * Prevent instantiation
      */
+
+    public static ProgressDialog getProgressDialogMsg(Context context, String msg) {
+        ProgressDialog progressDialog = new ProgressDialog(context, R.style.MyAlertDialogStyle);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage(msg);
+        return  progressDialog;
+    }
+
 
     private CommonUtil() {
     }
