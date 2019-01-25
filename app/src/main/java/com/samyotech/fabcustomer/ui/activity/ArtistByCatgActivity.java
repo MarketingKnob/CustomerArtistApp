@@ -43,7 +43,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 public class ArtistByCatgActivity extends AppCompatActivity  {
 
     private RecyclerView rvDiscover;
@@ -206,6 +205,7 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 //        ivPrev.setVisibility(View.VISIBLE);
         custompageradpter = new CustomViewPagerAdapter(this,allAtristListDTOList);
         mViewPager.setAdapter(custompageradpter);
+
         mViewPager.setPageTransformer(true, zoomOutTransformation);
 
     }
