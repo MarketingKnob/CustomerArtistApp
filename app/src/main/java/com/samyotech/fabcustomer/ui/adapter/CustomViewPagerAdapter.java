@@ -60,54 +60,61 @@ public class CustomViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, final int position) {
         View view = mLayoutInflater.inflate(R.layout.pager_item, container, false);
 
-        AppCompatTextView btn_price         = view.findViewById(R.id.btn_price);
-         prev_name                          = view.findViewById(R.id.prev_name);
-         next_name                          = view.findViewById(R.id.next_name);
-        AppCompatButton btn_set_profile     = view.findViewById(R.id.btn_set_profile);
-        CircleImageView IVartist            = view.findViewById(R.id.IVartist);
-         IVprev                             = view.findViewById(R.id.IVprev);
-         IVNext                             = view.findViewById(R.id.IVNext);
-        CustomTextView tvRating             = view.findViewById(R.id.tvRating);
-        RatingBar ratingbar                 = view.findViewById(R.id.ratingbar);
-        CustomTextViewBold CTVartistname    = view.findViewById(R.id.CTVartistname);
-        CustomTextView CTVartistwork        = view.findViewById(R.id.CTVartistwork);
+        AppCompatTextView btn_price        = view.findViewById(R.id.btn_price);
+        prev_name                          = view.findViewById(R.id.prev_name);
+        next_name                          = view.findViewById(R.id.next_name);
+        AppCompatButton btn_set_profile    = view.findViewById(R.id.btn_set_profile);
+        CircleImageView IVartist           = view.findViewById(R.id.IVartist);
+        IVprev                             = view.findViewById(R.id.IVprev);
+        IVNext                             = view.findViewById(R.id.IVNext);
+        CustomTextView tvRating            = view.findViewById(R.id.tvRating);
+        RatingBar ratingbar                = view.findViewById(R.id.ratingbar);
+        CustomTextViewBold CTVartistname   = view.findViewById(R.id.CTVartistname);
+        CustomTextView CTVartistwork       = view.findViewById(R.id.CTVartistwork);
 
         int prevPos=0;
         int nextPos=0;
         if (position != 0) {
              prevPos=position-1;
         }
+
         int lastPos=allAtristListDTOList.size()-1;
-        nextPos=position+1;
-
-
-        if (position == 0) {
-            prev_name.setVisibility(View.GONE);
-            IVprev.setVisibility(View.GONE);
-
-        }
-        else {
-            prev_name.setVisibility(View.VISIBLE);
-            IVprev.setVisibility(View.VISIBLE);
-        }
 
         if (position!=lastPos){
-//            next_name.setVisibility(View.VISIBLE);
-//            IVNext.setVisibility(View.VISIBLE);
-//
-//            next_name.setText(allAtristListDTOList.get(nextPos).getName());
-//            Glide.with(mContext).
-//                    load(allAtristListDTOList.get(nextPos).getImage())
-//                    .placeholder(R.drawable.dummyuser_image)
-//                    .dontAnimate()
-//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                    .into(IVNext);
+            nextPos=position+1;
+        }
+
+        if (position==0){
+            prev_name.setText("");
+
+
+        }else {
+            prev_name.setText(allAtristListDTOList.get(prevPos).getName());
+            Glide.with(mContext).
+                    load(allAtristListDTOList.get(prevPos).getImage())
+                    .placeholder(R.drawable.dummyuser_image)
+                    .dontAnimate()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(IVprev);
+
+        }
+
+        if (position==lastPos){
+            next_name.setText("");
+
+        }else {
+            next_name.setText(allAtristListDTOList.get(nextPos).getName());
+            Glide.with(mContext).
+                    load(allAtristListDTOList.get(nextPos).getImage())
+                    .placeholder(R.drawable.dummyuser_image)
+                    .dontAnimate()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(IVNext);
 
         }
 
         Log.d(TAG, "instantiateItem: "+allAtristListDTOList.size()+" Prev: "+prevPos+" Next :"+nextPos);
         CTVartistwork.setText("- "+allAtristListDTOList.get(position).getCategory_name()+"- ");
-
         Glide.with(mContext).
                 load(allAtristListDTOList.get(position).getImage())
                 .placeholder(R.drawable.dummyuser_image)
@@ -144,53 +151,56 @@ public class CustomViewPagerAdapter extends PagerAdapter {
         super.notifyDataSetChanged();
     }
 
-    @Override
-    public void setPrimaryItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        super.setPrimaryItem(container, position, object);
+//    @Override
+//    public void setPrimaryItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+//        super.setPrimaryItem(container, position, object);
+//
+//        int prevPos=0;
+//        int nextPos=0;
+//
+//        if (position != 0)  {
+//            prevPos=position-1;
+//
+//        }
+//
+//        prev_name.setVisibility(View.VISIBLE);
+//        IVprev.setVisibility(View.VISIBLE);
+//        prev_name.setText(allAtristListDTOList.get(prevPos).getName());
+//        Glide.with(mContext).
+//                load(allAtristListDTOList.get(prevPos).getImage())
+//                .placeholder(R.drawable.dummyuser_image)
+//                .dontAnimate()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .into(IVprev);
+//
+//
+//        int lastPos=allAtristListDTOList.size()-1;
+//        nextPos=position+1;
+//
+//        if (position==lastPos){
+//            next_name.setVisibility(View.GONE);
+//            IVNext.setVisibility(View.GONE);
+//
+//        }else {
+//            next_name.setVisibility(View.VISIBLE);
+//            IVNext.setVisibility(View.VISIBLE);
+//
+//            next_name.setText(allAtristListDTOList.get(nextPos).getName());
+//            Glide.with(mContext).
+//                    load(allAtristListDTOList.get(nextPos).getImage())
+//                    .placeholder(R.drawable.dummyuser_image)
+//                    .dontAnimate()
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                    .into(IVNext);
+//
+//        }
+//
+//        Log.d(TAG, "setPrimaryItem: Position"+position+"Size "+allAtristListDTOList.size()+" Prev: "+prevPos+" Next :"+nextPos);;
+//
+//    }
 
-        int prevPos=0;
-        int nextPos=0;
-
-        if (position != 0)  {
-            prevPos=position-1;
-
-        }
-
-        prev_name.setVisibility(View.VISIBLE);
-        IVprev.setVisibility(View.VISIBLE);
-        prev_name.setText(allAtristListDTOList.get(prevPos).getName());
-        Glide.with(mContext).
-                load(allAtristListDTOList.get(prevPos).getImage())
-                .placeholder(R.drawable.dummyuser_image)
-                .dontAnimate()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(IVprev);
-
-
-        int lastPos=allAtristListDTOList.size()-1;
-        nextPos=position+1;
-
-
-        if (position==lastPos){
-            next_name.setVisibility(View.GONE);
-            IVNext.setVisibility(View.GONE);
-
-        }else {
-            next_name.setVisibility(View.VISIBLE);
-            IVNext.setVisibility(View.VISIBLE);
-
-            next_name.setText(allAtristListDTOList.get(nextPos).getName());
-            Glide.with(mContext).
-                    load(allAtristListDTOList.get(nextPos).getImage())
-                    .placeholder(R.drawable.dummyuser_image)
-                    .dontAnimate()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(IVNext);
-
-        }
-
-        Log.d(TAG, "setPrimaryItem: Position"+position+"Size "+allAtristListDTOList.size()+" Prev: "+prevPos+" Next :"+nextPos);;
-
+    public static void refreshView(int pos){
+        Log.d(TAG, "refreshView: "+pos);
 
     }
 }

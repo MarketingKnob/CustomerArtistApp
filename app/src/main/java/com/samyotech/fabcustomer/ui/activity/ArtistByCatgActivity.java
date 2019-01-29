@@ -29,6 +29,7 @@ import com.samyotech.fabcustomer.interfacess.Consts;
 import com.samyotech.fabcustomer.interfacess.Helper;
 import com.samyotech.fabcustomer.network.NetworkManager;
 import com.samyotech.fabcustomer.preferences.SharedPrefrence;
+import com.samyotech.fabcustomer.ui.GateTransformation;
 import com.samyotech.fabcustomer.ui.ZoomOutTransformation;
 import com.samyotech.fabcustomer.ui.adapter.CustomViewPagerAdapter;
 import com.samyotech.fabcustomer.ui.adapter.DiscoverAdapter;
@@ -199,6 +200,8 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
 //        rvDiscover.setAdapter(discoverAdapter);
 
         ZoomOutTransformation zoomOutTransformation = new ZoomOutTransformation();
+        GateTransformation gateTransformation = new GateTransformation();
+
         tvNotFound.setVisibility(View.GONE);
         mViewPager.setVisibility(View.VISIBLE);
 //        ivNext.setVisibility(View.VISIBLE);
@@ -206,7 +209,26 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
         custompageradpter = new CustomViewPagerAdapter(this,allAtristListDTOList);
         mViewPager.setAdapter(custompageradpter);
 
-        mViewPager.setPageTransformer(true, zoomOutTransformation);
+        mViewPager.setPageTransformer(true, gateTransformation);
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+                CustomViewPagerAdapter.refreshView(i);
+                Log.d(TAG, "onPageScrolled: "+i);
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
 
     }
 
