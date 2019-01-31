@@ -243,8 +243,6 @@ public class ArtistByCatgActivity extends AppCompatActivity  {
         }
     }
 
-
-
     private int getItemofviewpager(int i) {
         return mViewPager.getCurrentItem() + i;
     }

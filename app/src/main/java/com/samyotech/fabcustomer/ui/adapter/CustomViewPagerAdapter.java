@@ -69,6 +69,10 @@ public class CustomViewPagerAdapter extends PagerAdapter {
         IVNext                             = view.findViewById(R.id.IVNext);
         CustomTextView tvRating            = view.findViewById(R.id.tvRating);
         RatingBar ratingbar                = view.findViewById(R.id.ratingbar);
+
+        RatingBar ratingbar_prev           = view.findViewById(R.id.ratingbar_prev);
+        RatingBar ratingbar_next           = view.findViewById(R.id.ratingbar_next);
+
         CustomTextViewBold CTVartistname   = view.findViewById(R.id.CTVartistname);
         CustomTextView CTVartistwork       = view.findViewById(R.id.CTVartistwork);
 
@@ -86,9 +90,11 @@ public class CustomViewPagerAdapter extends PagerAdapter {
 
         if (position==0){
             prev_name.setText("");
-
+            ratingbar_prev.setVisibility(View.GONE);
 
         }else {
+            ratingbar_prev.setVisibility(View.VISIBLE);
+            ratingbar_prev.setRating(Float.parseFloat(allAtristListDTOList.get(prevPos).getAva_rating()));
             prev_name.setText(allAtristListDTOList.get(prevPos).getName());
             Glide.with(mContext).
                     load(allAtristListDTOList.get(prevPos).getImage())
@@ -101,8 +107,11 @@ public class CustomViewPagerAdapter extends PagerAdapter {
 
         if (position==lastPos){
             next_name.setText("");
+            ratingbar_next.setVisibility(View.GONE);
 
         }else {
+            ratingbar_next.setVisibility(View.VISIBLE);
+            ratingbar_next.setRating(Float.parseFloat(allAtristListDTOList.get(nextPos).getAva_rating()));
             next_name.setText(allAtristListDTOList.get(nextPos).getName());
             Glide.with(mContext).
                     load(allAtristListDTOList.get(nextPos).getImage())
@@ -124,8 +133,8 @@ public class CustomViewPagerAdapter extends PagerAdapter {
 
         tvRating.setText("(" + allAtristListDTOList.get(position).getAva_rating() + "/5)");
         CTVartistname.setText(allAtristListDTOList.get(position).getName());
-//        ratingbar.setRating(Float.parseFloat(allAtristListDTOList.get(position).getAva_rating()));
-        ratingbar.setRating((float) 3.0);
+        ratingbar.setRating(Float.parseFloat(allAtristListDTOList.get(position).getAva_rating()));
+
         btn_price.setText("Rs. "+allAtristListDTOList.get(position).getPrice());
         btn_set_profile.setOnClickListener(new View.OnClickListener() {
             @Override
